@@ -1,0 +1,38 @@
+{
+  "name": "pci-dss-otp-mfa-research",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lifecycle-based compliance-as-code validation of email/SMS OTP MFA against PCI-DSS v4.0.1, with a companion research layer (risk-based-auth classifier, control/feature ablation, delayed-OTP and timing-side-channel analysis).",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "app": "node demo-app/server.js",
+    "pretest": "bddgen",
+    "test": "playwright test",
+    "test:email": "bddgen && playwright test --grep @email-otp",
+    "test:sms": "bddgen && playwright test --grep @sms-otp",
+    "report": "playwright show-report --host localhost",
+    "dataset:fetch": "node dataset/fetch-full-dataset.js",
+    "evidence:verify": "node scripts/verify-bundle.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "js-yaml": "^4.1.0",
+    "mailosaur": "^8.7.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.18.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.14.10",
+    "playwright-bdd": "^9.2.0",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
