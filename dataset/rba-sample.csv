@@ -1,0 +1,21 @@
+Index,Login Timestamp,User ID,Round-Trip Time [ms],IP Address,Country,Region,City,ASN,User Agent String,OS Name and Version,Browser Name and Version,Device Type,Login Successful,Is Attack IP,Is Account Takeover
+1,2024-01-08T09:12:03Z,u-0001,142,203.0.113.11,Germany,Bavaria,Munich,AS3320,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0",Windows 10,Chrome 120.0,desktop,True,False,False
+2,2024-01-08T09:14:51Z,u-0002,88,198.51.100.24,United States,California,San Jose,AS7018,"Mozilla/5.0 (Macintosh; Intel Mac OS X 14_2) Safari/17.2",macOS 14.2,Safari 17.2,desktop,True,False,False
+3,2024-01-08T09:20:17Z,u-0003,301,203.0.113.55,Nigeria,Lagos,Lagos,AS37282,"Mozilla/5.0 (Linux; Android 13)",Android 13,Chrome Mobile 119.0,mobile,False,True,False
+4,2024-01-08T09:23:44Z,u-0001,150,203.0.113.11,Germany,Bavaria,Munich,AS3320,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0",Windows 10,Chrome 120.0,desktop,True,False,False
+5,2024-01-08T09:30:02Z,u-0004,64,198.51.100.90,United Kingdom,England,London,AS5089,"Mozilla/5.0 (iPhone; CPU iPhone OS 17_2)",iOS 17.2,Mobile Safari 17.2,mobile,True,False,False
+6,2024-01-08T09:31:19Z,u-0005,412,198.51.100.201,Brazil,Sao Paulo,Sao Paulo,AS28573,"Mozilla/5.0 (Windows NT 6.1; WOW64) Firefox/121.0",Windows 7,Firefox 121.0,desktop,False,False,False
+7,2024-01-08T09:35:28Z,u-0002,91,198.51.100.24,United States,California,San Jose,AS7018,"Mozilla/5.0 (Macintosh; Intel Mac OS X 14_2) Safari/17.2",macOS 14.2,Safari 17.2,desktop,True,False,False
+8,2024-01-08T09:41:07Z,u-0006,229,203.0.113.180,India,Karnataka,Bengaluru,AS55836,"Mozilla/5.0 (Linux; Android 12)",Android 12,Chrome Mobile 118.0,mobile,True,False,False
+9,2024-01-08T09:44:36Z,u-0007,55,198.51.100.44,Canada,Ontario,Toronto,AS577,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Edge/120.0",Windows 11,Edge 120.0,desktop,True,False,False
+10,2024-01-08T09:50:12Z,u-0003,318,203.0.113.55,Nigeria,Lagos,Lagos,AS37282,"Mozilla/5.0 (Linux; Android 13)",Android 13,Chrome Mobile 119.0,mobile,False,True,True
+11,2024-01-08T09:52:40Z,u-0008,73,198.51.100.61,Australia,New South Wales,Sydney,AS1221,"Mozilla/5.0 (Macintosh; Intel Mac OS X 13_6) Chrome/119.0",macOS 13.6,Chrome 119.0,desktop,True,False,False
+12,2024-01-08T09:58:03Z,u-0009,120,203.0.113.201,France,Ile-de-France,Paris,AS3215,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0",Windows 10,Chrome 120.0,desktop,True,False,False
+13,2024-01-08T10:03:19Z,u-0010,499,198.51.100.150,Vietnam,Hanoi,Hanoi,AS45899,"Mozilla/5.0 (Linux; Android 11)",Android 11,Chrome Mobile 116.0,mobile,False,True,False
+14,2024-01-08T10:07:52Z,u-0004,67,198.51.100.90,United Kingdom,England,London,AS5089,"Mozilla/5.0 (iPhone; CPU iPhone OS 17_2)",iOS 17.2,Mobile Safari 17.2,mobile,True,False,False
+15,2024-01-08T10:11:36Z,u-0011,110,203.0.113.222,South Africa,Gauteng,Johannesburg,AS37457,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Firefox/121.0",Windows 10,Firefox 121.0,desktop,True,False,False
+16,2024-01-08T10:15:04Z,u-0012,183,198.51.100.77,Japan,Tokyo,Tokyo,AS2497,"Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) Safari/17.1",macOS 14.0,Safari 17.1,desktop,True,False,False
+17,2024-01-08T10:19:41Z,u-0013,275,203.0.113.99,Russia,Moscow,Moscow,AS12389,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/119.0",Windows 10,Chrome 119.0,desktop,False,True,False
+18,2024-01-08T10:24:58Z,u-0005,388,198.51.100.201,Brazil,Sao Paulo,Sao Paulo,AS28573,"Mozilla/5.0 (Windows NT 6.1; WOW64) Firefox/121.0",Windows 7,Firefox 121.0,desktop,True,False,False
+19,2024-01-08T10:29:15Z,u-0014,58,198.51.100.33,Ireland,Leinster,Dublin,AS5466,"Mozilla/5.0 (Macintosh; Intel Mac OS X 14_2) Chrome/120.0",macOS 14.2,Chrome 120.0,desktop,True,False,False
+20,2024-01-08T10:33:47Z,u-0015,142,203.0.113.145,Mexico,Jalisco,Guadalajara,AS8151,"Mozilla/5.0 (Linux; Android 14)",Android 14,Chrome Mobile 120.0,mobile,True,False,False
