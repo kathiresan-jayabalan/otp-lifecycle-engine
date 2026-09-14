@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sign up - OTP/FIDO2 PoC</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>Create account</h1>
+    <% if (error) { %><p role="alert" class="error"><%= error %></p><% } %>
+    <form method="post" action="/signup">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="phone">Phone (E.164, e.g. +14155550100)</label>
+      <input id="phone" name="phone" type="tel">
+
+      <button type="submit">Create account</button>
+    </form>
+    <p><a href="/login">Already have an account? Sign in</a></p>
+  </main>
+</body>
+</html>

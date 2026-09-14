@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Enter code - OTP/FIDO2 PoC</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>Enter your <%= channel %> verification code</h1>
+    <p role="alert" class="error" id="otp-error"><% if (error) { %><%= error %><% } %></p>
+    <form id="otp-verify-form">
+      <label for="code">Verification code</label>
+      <input id="code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" required>
+      <button type="submit">Verify</button>
+    </form>
+  </main>
+  <script src="/otp-verify.js"></script>
+</body>
+</html>

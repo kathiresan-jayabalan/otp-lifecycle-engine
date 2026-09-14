@@ -1,0 +1,9 @@
+body { font-family: system-ui, sans-serif; margin: 0; background: #f5f6f8; }
+main { max-width: 30rem; margin: 3rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+input { width: 100%; padding: 0.5rem; margin-top: 0.25rem; box-sizing: border-box; }
+button { margin-top: 1rem; padding: 0.5rem 1rem; cursor: pointer; }
+.error { color: #a4001d; }
+fieldset { margin-top: 0.75rem; border: 1px solid #ddd; }
+ul { list-style: none; padding: 0; }
+li { padding: 0.4rem 0; border-bottom: 1px solid #eee; }
