@@ -1,0 +1,111 @@
+# Control profile for OTP-related predicates (email + SMS channels).
+#
+# Schema follows the P = (S, V, Q, Theta, Pi, E) tuple from the design notes:
+#   S/V     - source standard + version this control traces to
+#   Q       - short paraphrase kept separate from the executable predicate,
+#             NOT a verbatim reproduction of licensed standard text
+#   theta   - implementation parameters read at runtime (env-driven, see .env.example)
+#   pi      - id of the predicate function in src/policy/predicates.ts
+#   evidence - event fields that must be present or the verdict is INCONCLUSIVE
+#
+# clause_verified / confidence methodology (see compliance/pci-dss-v4-otp-control-map.md
+# for the full citation rationale and known-limitation notes per control):
+#   true + high    - requirement ID and bullet text recalled with high confidence from
+#                    the PCI-DSS v4.0.1 published standard; still recommend a final check
+#                    against a licensed copy before any external publication.
+#   false + medium - PCI-DSS sets an outcome-level mandate but does not specify the
+#                    control's implementation mechanics at this granularity; the cited
+#                    NIST SP 800-63B-4 section is the informative "how" reference, and the
+#                    section number itself is a medium-confidence recall for a document
+#                    revision (-4, 2025) with less training-data exposure than 800-63B rev 3.
+#   false + low    - mapped for research completeness; verify independently before citing.
+version: 1
+
+controls:
+  - control_id: otp.replay-resistance
+    source: PCI-DSS
+    source_version: "4.0.1"
+    clause: "8.5.1(a) - MFA system is not susceptible to replay attacks"
+    clause_verified: true
+    confidence: high
+    paraphrase: >
+      A previously used one-time authentication factor must not be usable a
+      second time to gain access.
+    predicate: replayRejected
+    mandatory: true
+    theta: {}
+    evidence: [subject, session, mechanism, action]
+
+  - control_id: otp.bounded-validity
+    source: NIST-SP-800-63B-4
+    source_version: "2025-07"
+    clause: "Section 5 family (OTP authenticator validity window) - informative reference; PCI-DSS 4.0.1 does not itself specify a numeric TTL"
+    clause_verified: false
+    confidence: medium
+    paraphrase: >
+      A one-time authentication factor must only be usable within a defined,
+      short validity window.
+    predicate: expiryBoundaryEnforced
+    mandatory: true
+    theta:
+      ttlEnvVar: OTP_TTL_SECONDS
+    evidence: [subject, session, mechanism, action]
+
+  - control_id: otp.attempt-limit
+    source: PCI-DSS
+    source_version: "4.0.1"
+    clause: "8.3.4 - invalid authentication attempts limited to <=10, lockout duration >=30 min or until admin reset"
+    clause_verified: true
+    confidence: high
+    paraphrase: >
+      Repeated invalid submissions of a one-time factor must trigger a
+      lockout rather than unlimited retry.
+    predicate: attemptLockoutEnforced
+    mandatory: true
+    theta:
+      maxAttemptsEnvVar: OTP_MAX_ATTEMPTS
+    evidence: [subject, session, mechanism, action]
+
+  - control_id: otp.session-binding
+    source: NIST-SP-800-63B-4
+    source_version: "2025-07"
+    clause: "Section 5 family (authenticator/session binding) - informative reference; supports PCI-DSS 8.5.1(d) (all-factor success tied to one authentication event)"
+    clause_verified: false
+    confidence: medium
+    paraphrase: >
+      An authenticator secret issued for one authentication session must not
+      be redeemable from a different session.
+    predicate: sessionBindingEnforced
+    mandatory: true
+    theta: {}
+    evidence: [subject, session, mechanism, action]
+
+  - control_id: otp.supersession
+    source: NIST-SP-800-63B-4
+    source_version: "2025-07"
+    clause: "Section 5 family (single active secret per subject/channel) - informative reference; exact sub-clause not independently verified for the -4 revision"
+    clause_verified: false
+    confidence: medium
+    paraphrase: >
+      Issuing a new one-time factor must invalidate any prior outstanding
+      factor for the same subject and channel.
+    predicate: supersessionEnforced
+    mandatory: true
+    theta: {}
+    evidence: [subject, session, mechanism, action]
+
+  - control_id: otp.channel-restriction
+    source: NIST-SP-800-63B-4
+    source_version: "2025-07"
+    clause: "Section 5.1.3 family (restricted authenticators, SMS/PSTN OOB) - informative reference; PCI-DSS 4.0.1 is delivery-channel agnostic and does not itself restrict SMS"
+    clause_verified: false
+    confidence: medium
+    paraphrase: >
+      SMS-delivered one-time codes carry additional risk acknowledgment
+      obligations that email delivery does not automatically satisfy; this
+      profile records channel type per verdict rather than asserting AAL
+      conformance for either channel.
+    predicate: channelRecorded
+    mandatory: false
+    theta: {}
+    evidence: [channel]
