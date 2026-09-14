@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "otp-lifecycle-engine: A Lifecycle-Based Compliance-as-Code Framework for PCI-DSS/NIST OTP MFA Validation"
+version: 1.0.0
+date-released: 2026-09-14
+license: Apache-2.0
+repository-code: "https://github.com/kathiresan-jayabalan/otp-lifecycle-engine"
+
+authors:
+  - family-names: Jayabalan
+    given-names: Kathiresan
+    affiliation: "Research Scholar, Sathyabama Institute of Science and Technology, Chennai, Tamil Nadu, India"
+    email: kathiresan.jayabalan@gmail.com
+    orcid: "https://orcid.org/0009-0006-0902-772X"
+
+keywords:
+  - one-time passcode
+  - multi-factor authentication
+  - PCI DSS
+  - NIST SP 800-63B
+  - compliance as code
+  - lifecycle testing
+  - authentication testing
+  - Playwright
+  - behavior-driven development
+  - security testing
+
+abstract: "A deterministic, lifecycle-based compliance-as-code framework for validating one-time-passcode (OTP) multi-factor authentication over email and SMS channels against PCI-DSS v4.0.1 and NIST SP 800-63B-4 controls. OTP is modeled as an explicit state machine (generated, valid, then expired, consumed, superseded, or locked), with each regulatory requirement mapped to a specific, testable state transition and evaluated via a deterministic PASS/FAIL/INCONCLUSIVE policy engine. The framework supports two interchangeable OTP delivery-capture adapters, a real external email/SMS capture service and a local in-memory simulator, so the same lifecycle assertions and compliance mapping validate identically against either. A companion statistical/ML research layer evaluates control-violation prediction, feature and control ablation, delayed-OTP TTL boundary behavior under jitter, and OTP comparison timing side-channels, on synthetic, seeded, and explicitly disclosed data. Proven via 9 passing Playwright-BDD end-to-end scenarios covering 6 cited controls."
