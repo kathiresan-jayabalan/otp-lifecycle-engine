@@ -70,7 +70,7 @@ same numbers on that seed. Variance across multiple seeds is reported separately
 `*_per_seed.csv` file; the point estimates below are seed 42 only and should be read alongside
 that variance, not treated as a single definitive number.
 
-## Experiments results (seed 42; see [`research/results/summary_table.md`](research/results/summary_table.md) for full tables and [`research/results/`](research/results/) for the per-seed CSVs)
+## Experiments results (seed 42)
 
 All rows below are computed on synthetic, seeded data unless noted otherwise. See
 [Limitations](#limitations--threats-to-validity) before citing any of them.
