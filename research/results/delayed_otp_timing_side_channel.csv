@@ -1,0 +1,3 @@
+scenario,n_seeds,mean_latency_correct_ms,mean_latency_incorrect_ms,welch_fraction_seeds_significant_0_01,welch_combined_p_fisher,mannwhitney_fraction_seeds_significant_0_01,mannwhitney_combined_p_fisher,significant_at_0_01
+H0_constant_time,10,1.9988174089229034,2.0015880237593846,0.0,0.19576777554241961,0.0,0.30250444701843077,False
+H1_naive_comparison,10,2.0019661109944584,1.8466880234285874,1.0,6.309303860679539e-139,1.0,8.678103917215415e-133,True
