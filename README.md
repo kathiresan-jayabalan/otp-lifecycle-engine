@@ -1,3 +1,6 @@
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22742645.svg)](https://doi.org/10.5281/zenodo.22742645)
+
 # otp-lifecycle-engine
 
 PCI DSS v4.0.1 / NIST SP 800-63B-4 compliance-as-code engine for email and SMS OTP MFA,
